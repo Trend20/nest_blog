@@ -11,8 +11,4 @@ export class UserRepository extends BaseRepository<UserDocument> {
   ) {
     super(userModel);
   }
-
-  // async findByEmail(email: string): Promise<UserDocument> {
-  //   return this.model.findOne({ email }).exec();
-  // }
 }

@@ -11,6 +11,7 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
     }),
   );
-  await app.listen(3000);
+  app.setGlobalPrefix(process.env.APP_API_PREFIX);
+  await app.listen(process.env.SERVER_PORT);
 }
 bootstrap();

@@ -15,6 +15,6 @@ async function bootstrap() {
   app.setGlobalPrefix(process.env.APP_API_PREFIX);
   setupSwagger(app);
   const port = process.env.SERVER_PORT;
-  await app.listen(port);
+  await app.listen(port, () => console.log(`Server started on port ${port}`));
 }
 bootstrap();

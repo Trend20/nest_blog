@@ -45,6 +45,14 @@ export class UserRepository extends BaseRepository<UserDocument> {
     return this.userModel.findOne({ role }).exec();
   }
 
+  // refresh token
+  async updateRefreshToken(
+    userId: string,
+    refreshToken: string | null,
+  ): Promise<void> {
+    await this.userModel.findByIdAndUpdate(userId, { refreshToken }).exec();
+  }
+
   //   update user
   public async updateUser(
     userId: string | Types.ObjectId,

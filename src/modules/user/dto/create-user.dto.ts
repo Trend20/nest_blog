@@ -39,6 +39,7 @@ export class CreateUserDto {
 
   @ApiProperty()
   @IsNotEmpty()
+  @IsOptional()
   @IsEnum(UserRole, { message: 'Role must be either admin, author, or reader' })
-  role: string[];
+  role?: string[];
 }
